@@ -10,28 +10,25 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
 import java.util.UUID;
 
 @RequestMapping("/api/v1/bread")
 @RestController
 public class BreadController {
 
-    @GetMapping
+    @GetMapping("/{breadId}")
     public ResponseEntity<BreadDto> getBreadById(@PathVariable("breadId") UUID breadId){
-
         //todo impl
         return new ResponseEntity<>(BreadDto.builder().build(), HttpStatus.OK);
     }
 
     @PostMapping
     public ResponseEntity saveNewBread(@RequestBody BreadDto breadDto){
-
         //todo impl
         return new ResponseEntity(HttpStatus.CREATED);
     }
 
-    @PutMapping
+    @PutMapping("/{breadId}")
     public ResponseEntity updateBreadId(@PathVariable("breadId") UUID breadId, @RequestBody BreadDto breadDto){
 
         return new ResponseEntity(HttpStatus.NO_CONTENT);

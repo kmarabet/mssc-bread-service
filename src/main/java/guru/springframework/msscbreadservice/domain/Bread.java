@@ -51,7 +51,8 @@ public class Bread {
     private BigDecimal price;
 
     private Integer minOnHand;
-    private Integer quantityToBake;
+    private Float size;
+    private String sizeUnity;
 
 
 

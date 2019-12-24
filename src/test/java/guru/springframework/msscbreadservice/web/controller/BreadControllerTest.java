@@ -2,11 +2,13 @@ package guru.springframework.msscbreadservice.web.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import guru.springframework.msscbreadservice.web.model.BreadDto;
+import guru.springframework.msscbreadservice.web.model.BreadStypeEnum;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
+import java.math.BigDecimal;
 import java.util.UUID;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
@@ -30,7 +32,7 @@ class BreadControllerTest {
     @Test
     void saveNewBread() throws Exception {
 
-        BreadDto breadDto = BreadDto.builder().build();
+        BreadDto breadDto = getValidBreadDto();
         String breadDtoJson = objectMapper.writeValueAsString(breadDto);
 
         mockMvc.perform(post("/api/v1/bread/")
@@ -42,13 +44,22 @@ class BreadControllerTest {
     @Test
     void updateBreadId() throws Exception {
 
-        BreadDto breadDto = BreadDto.builder().build();
+        BreadDto breadDto = getValidBreadDto();
         String breadDtoJson = objectMapper.writeValueAsString(breadDto);
 
         mockMvc.perform(put("/api/v1/bread/"+UUID.randomUUID().toString())
         .contentType(MediaType.APPLICATION_JSON)
         .content(breadDtoJson))
         .andExpect(status().isNoContent());
+    }
+
+    BreadDto getValidBreadDto(){
+        return BreadDto.builder()
+                .breadName("My bread")
+                .breadStyle(BreadStypeEnum.ARABIC)
+                .price(new BigDecimal("0.19"))
+                .upc(172356176537L)
+                .build();
     }
 
 }

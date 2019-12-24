@@ -38,7 +38,6 @@ public class Bread {
     @CreationTimestamp
     @Column(updatable = false)
     private Timestamp createdDate;
-
     @UpdateTimestamp
     private Timestamp lastModifiedDate;
 
@@ -53,7 +52,5 @@ public class Bread {
     private Integer minOnHand;
     private Float size;
     private String sizeUnity;
-
-
 
 }

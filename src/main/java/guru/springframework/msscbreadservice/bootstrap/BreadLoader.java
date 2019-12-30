@@ -9,6 +9,10 @@ import java.math.BigDecimal;
 @Component
 public class BreadLoader implements CommandLineRunner {
 
+    public static final String BREAD_1_UPC = "781421006108";
+    public static final String BREAD_2_UPC = "781421002056";
+    public static final String BREAD_3_UPC = "781421002059";
+
     private final BreadRepository breadRepository;
 
     public BreadLoader(BreadRepository breadRepository) {
@@ -28,7 +32,7 @@ public class BreadLoader implements CommandLineRunner {
                     .breadStyle("French")
                     .size(14.50f)
                     .sizeUnity("oz")
-                    .upc(781421006108L)
+                    .upc(BREAD_1_UPC)
                     .price(new BigDecimal("1.65"))
                     .build());
 
@@ -37,8 +41,17 @@ public class BreadLoader implements CommandLineRunner {
                     .breadStyle("White")
                     .size(12.50f)
                     .sizeUnity("oz")
-                    .upc(781421002056L)
+                    .upc(BREAD_2_UPC)
                     .price(new BigDecimal("1.95"))
+                    .build());
+
+            breadRepository.save(Bread.builder()
+                    .breadName("Country White Sourdough Oval")
+                    .breadStyle("White")
+                    .size(11.50f)
+                    .sizeUnity("oz")
+                    .upc(BREAD_3_UPC)
+                    .price(new BigDecimal("1.9"))
                     .build());
         }
         System.out.println("Loaded Breads: " + breadRepository.count());

@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 import java.util.UUID;
 
 @RequiredArgsConstructor
-@Service
+@Service//("breadService")
 public class BreadServiceImpl implements BreadService {
 
     private final BreadRepository breadRepository;

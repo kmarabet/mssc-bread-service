@@ -45,7 +45,7 @@ public class Bread {
     private String breadStyle;
 
     @Column(unique = true)
-    private Long upc;
+    private String upc;
 
     private BigDecimal price;
 

@@ -30,8 +30,8 @@ public class Bread {
     @Id
     @GeneratedValue(generator = "UUID")
     @GenericGenerator(name = "UUID", strategy = "org.hibernate.id.UUIDGenerator")
-    @Column(length = 36, columnDefinition = "varchar", updatable = false, nullable = false)
-//    @Type(type="uuid-char")
+    @Type(type="org.hibernate.type.UUIDCharType")
+    @Column(length = 36, columnDefinition = "varchar(32)", updatable = false, nullable = false)
     private UUID id;
 
     @Version

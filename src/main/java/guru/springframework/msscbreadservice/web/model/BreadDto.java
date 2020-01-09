@@ -37,7 +37,7 @@ public class BreadDto {
     private String breadName;
 
     @NotNull
-    private BreadStypeEnum breadStyle;
+    private BreadStyleEnum breadStyle;
 
 //    @Positive
     @NotNull

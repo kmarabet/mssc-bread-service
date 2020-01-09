@@ -11,4 +11,6 @@ public interface BreadMapper {
 
     Bread breadDtoToBread(BreadDto breadDto);
 
+    BreadDto breadToBreadDtoWithInventory(Bread bread);
+
 }

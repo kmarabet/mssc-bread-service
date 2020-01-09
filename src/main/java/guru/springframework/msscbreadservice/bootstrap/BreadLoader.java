@@ -6,7 +6,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 import java.math.BigDecimal;
 
-@Component
+//@Component
 public class BreadLoader implements CommandLineRunner {
 
     public static final String BREAD_1_UPC = "781421006108";
@@ -52,6 +52,7 @@ public class BreadLoader implements CommandLineRunner {
                     .sizeUnity("oz")
                     .upc(BREAD_3_UPC)
                     .price(new BigDecimal("1.9"))
+                    .minOnHand(100)
                     .build());
         }
         System.out.println("Loaded Breads: " + breadRepository.count());

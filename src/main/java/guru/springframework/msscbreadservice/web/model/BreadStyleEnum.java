@@ -1,5 +1,5 @@
 package guru.springframework.msscbreadservice.web.model;
 
-public enum BreadStypeEnum {
+public enum BreadStyleEnum {
     ARABIC, RUSSIAN, TURKISH, FRENCH, BRITISH;
 }

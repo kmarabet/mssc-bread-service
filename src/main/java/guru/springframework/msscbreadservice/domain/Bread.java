@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.annotations.Type;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.Column;
@@ -30,6 +31,7 @@ public class Bread {
     @GeneratedValue(generator = "UUID")
     @GenericGenerator(name = "UUID", strategy = "org.hibernate.id.UUIDGenerator")
     @Column(length = 36, columnDefinition = "varchar", updatable = false, nullable = false)
+//    @Type(type="uuid-char")
     private UUID id;
 
     @Version
@@ -52,5 +54,8 @@ public class Bread {
     private Integer minOnHand;
     private Float size;
     private String sizeUnity;
+
+    private Integer quantityToBake;
+    private Integer quantityOnHand;
 
 }

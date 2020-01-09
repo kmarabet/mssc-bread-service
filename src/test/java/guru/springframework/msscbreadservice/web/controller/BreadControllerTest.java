@@ -4,7 +4,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import guru.springframework.msscbreadservice.bootstrap.BreadLoader;
 import guru.springframework.msscbreadservice.services.BreadService;
 import guru.springframework.msscbreadservice.web.model.BreadDto;
-import guru.springframework.msscbreadservice.web.model.BreadStypeEnum;
+import guru.springframework.msscbreadservice.web.model.BreadStyleEnum;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
@@ -71,7 +71,7 @@ class BreadControllerTest {
     BreadDto getValidBreadDto(){
         return BreadDto.builder()
                 .breadName("My bread")
-                .breadStyle(BreadStypeEnum.ARABIC)
+                .breadStyle(BreadStyleEnum.ARABIC)
                 .price(new BigDecimal("0.19"))
                 .upc(BreadLoader.BREAD_3_UPC)
                 .build();

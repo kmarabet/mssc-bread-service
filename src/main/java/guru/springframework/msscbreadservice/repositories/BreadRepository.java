@@ -4,10 +4,10 @@ import guru.springframework.msscbreadservice.domain.Bread;
 import guru.springframework.msscbreadservice.web.model.BreadStyleEnum;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
-import org.springframework.data.repository.PagingAndSortingRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.UUID;
 
-public interface BreadRepository extends PagingAndSortingRepository<Bread, UUID> {
+public interface BreadRepository extends JpaRepository<Bread, UUID> {
 
     Page<Bread> findAllByBreadName(String breadName, Pageable pageable);
 
